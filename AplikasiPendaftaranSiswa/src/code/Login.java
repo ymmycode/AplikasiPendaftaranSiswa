@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Code;
+package code;
 
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;

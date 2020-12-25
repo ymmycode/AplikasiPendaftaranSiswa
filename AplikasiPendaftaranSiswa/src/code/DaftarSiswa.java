@@ -3,23 +3,65 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Code;
+package code;
 
+import com.mysql.jdbc.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author achma
  */
-public class DaftarSiswa extends javax.swing.JInternalFrame {
+public final class DaftarSiswa extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form DaftarSiswa
      */
+    
+    Connection connection;
+    Statement stat,stat1,stat2,stat3;
+    ResultSet rs;
+    String sql, sql1, sql2, sql3;
+    
     public DaftarSiswa() {
         initComponents();
+        koneksi condb = new koneksi();
+        condb.Config();
+        connection = (Connection) condb.connect;
+        stat = condb.stmt;
+        TablePendaftaran();
+    }
+    
+    void TablePendaftaran()
+    {
+        try{
+            sql = "SELECT\n" +
+                    "pendaftaran.nodaftar,\n" +
+                    "pendaftaran.nama,\n" +
+                    "pendaftaran.kelamin,\n" +
+                    "pendaftaran.namawali,\n" +
+                    "pendaftaran.ttl,\n" +
+                    "pendaftaran.agama,\n" +
+                    "pendaftaran.notelp,\n" +
+                    "pendaftaran.alamat,\n" +
+                    "pendaftaran.tgldaftar\n" +
+                    "FROM\n" +
+                    "pendaftaran";
+
+            stat = (com.mysql.jdbc.Statement) connection.prepareStatement(sql);
+            rs = stat.executeQuery(sql);
+
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**

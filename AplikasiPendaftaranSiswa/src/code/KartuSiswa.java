@@ -3,11 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Code;
+package code;
 
+import com.mysql.jdbc.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -18,8 +24,44 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
     /**
      * Creates new form KartuSiswa
      */
+    
+    Connection connection;
+    Statement stat,stat1,stat2,stat3;
+    ResultSet rs;
+    String sql, sql1, sql2, sql3;
+    
     public KartuSiswa() {
+        koneksi condb = new koneksi();
+        condb.Config();
+        connection = (Connection) condb.connect;
+        stat = condb.stmt;
         initComponents();
+        TableNis();
+    }
+    
+    void TableNis()
+    {
+        try{
+            sql = "SELECT\n" +
+                    "siswa.nis,\n" +
+                    "siswa.nama,\n" +
+                    "siswa.kelamin,\n" +
+                    "siswa.ttl,\n" +
+                    "siswa.alamat,\n" +
+                    "siswa.notelp,\n" +
+                    "siswa.tgl\n" +
+                    "FROM\n" +
+                    "siswa\n" +
+                    "WHERE\n" +
+                    "siswa.nis IS NOT NULL";
+
+            stat = (com.mysql.jdbc.Statement) connection.prepareStatement(sql);
+            rs = stat.executeQuery(sql);
+
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
     /**
@@ -92,7 +134,7 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
         jLabel6.setText("TTL");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("Tempat Lahir");
+        jLabel7.setText("Alamat");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("No. Telp");
@@ -136,7 +178,7 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
                     .addComponent(jLabel13)
                     .addComponent(jLabel9)
                     .addComponent(jLabel14))
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,6 +239,11 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -207,7 +254,7 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -241,7 +288,7 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(197, Short.MAX_VALUE)
+                .addContainerGap(296, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -266,10 +313,9 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(9, 9, 9))
@@ -282,10 +328,10 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -310,6 +356,26 @@ public class KartuSiswa extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        //get data from the table
+        int row = jTable1.getSelectedRow();
+        String nis = jTable1.getModel().getValueAt(row, 0).toString();
+        String nama = jTable1.getModel().getValueAt(row, 1).toString();
+        String kelamin = jTable1.getModel().getValueAt(row, 2).toString();
+        String ttl = jTable1.getModel().getValueAt(row, 3).toString();
+        String alamat = jTable1.getModel().getValueAt(row, 4).toString();
+        String notelp = jTable1.getModel().getValueAt(row, 5).toString();
+        
+        jLabel10.setText(nis);
+        jLabel11.setText(nama);
+        jLabel12.setText(kelamin);
+        jLabel13.setText(ttl);
+        jLabel9.setText(alamat);
+        jLabel14.setText(notelp);
+        
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
