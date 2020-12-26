@@ -599,7 +599,6 @@ public class Pendaftaran extends javax.swing.JInternalFrame {
             String notelp = jTextField8.getText();
             String alamat = jTextArea1.getText();
             String tgldaftar = jLabel17.getText();
-            String nis = "Belum Terdaftar";
         
             
 
@@ -614,9 +613,8 @@ public class Pendaftaran extends javax.swing.JInternalFrame {
                 +alamat+"','"
                 +tgldaftar+"')";
 
-            sql2 = "INSERT INTO siswa(nodaftar, nis, nama, kelamin, ttl, alamat, notelp) VALUES ('"
+            sql2 = "INSERT INTO siswa(nodaftar, nama, kelamin, ttl, alamat, notelp) VALUES ('"
                 +nodaftar+"','"
-                +nis+"','"
                 +nama+"','"
                 +kelamin+"','"
                 +ttl+"','"

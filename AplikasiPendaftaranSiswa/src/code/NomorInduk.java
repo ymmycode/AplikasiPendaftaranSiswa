@@ -128,6 +128,7 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jTextField9 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -222,7 +223,7 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
         jLabel10.setText("NIS");
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("XXXXXXXXX");
+        jLabel16.setText("XX");
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("Muat Ulang");
@@ -232,14 +233,22 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton5.setText("Kosongkan");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
@@ -247,36 +256,33 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel8))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel8))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(435, 435, 435)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField2)))
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                                .addComponent(jTextField2))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -313,7 +319,8 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jButton5))
                 .addContainerGap())
         );
 
@@ -493,10 +500,10 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
 
     private void jTextField11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField11KeyReleased
         // TODO add your handling code here:
-        DefaultTableModel table = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel table = (DefaultTableModel) jTable3.getModel();
         String search = jTextField11.getText();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel> (table);
-        jTable1.setRowSorter(tr);
+        jTable3.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter("(?i)" + search.trim()));
     }//GEN-LAST:event_jTextField11KeyReleased
 
@@ -531,7 +538,8 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
     void InputData() throws SQLException
     {
         if ("".equals(jTextField2.getText()) ||
-                "XX".equals(jLabel5.getText()))
+                "XX".equals(jLabel6.getText()) ||
+                "Belum Terdaftar".equals(jTextField2.getText()))
         {JOptionPane.showMessageDialog(null , "Isi Form dengan benar");}
         else
         {
@@ -594,6 +602,7 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
         jLabel13.setText(ttl);
         
         jLabel16.setText("Belum Terdaftar");
+        jTextField2.setText("Belum Terdaftar");
  
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -620,12 +629,42 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
         Clear();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if ("XX".equals(jLabel5.getText()) || 
+                jTextField2.getText() == "Belum Terdaftar" )
+        {JOptionPane.showMessageDialog(null , "Pilih Data");}
+        else
+        {
+            try {
+                String nodaftar = jLabel5.getText();
+                
+                
+                sql1 = "update siswa set "
+                        + "nis = null"
+                        + "where nodaftar = '"+nodaftar+"'";
+                
+                
+                stat = (com.mysql.jdbc.Statement) connection.prepareStatement(sql1);
+                stat.execute(sql1);
+                
+                stat.close();
+                
+                
+                JOptionPane.showMessageDialog(null , "Telah diperbarui");
+            } catch (SQLException ex) {
+                Logger.getLogger(NomorInduk.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

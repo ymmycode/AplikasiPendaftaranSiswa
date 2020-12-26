@@ -99,7 +99,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+            .addGap(0, 307, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
@@ -265,26 +265,51 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuItem7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8_edit_graph_report_35px.png"))); // NOI18N
         jMenuItem7.setText("Data Siswa");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
 
         jMenuItem8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8_edit_graph_report_35px.png"))); // NOI18N
         jMenuItem8.setText("Data Pembayaran");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem8);
 
         jMenuItem10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8_edit_graph_report_35px.png"))); // NOI18N
         jMenuItem10.setText("Data Pendaftaran");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuItem12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8_edit_graph_report_35px.png"))); // NOI18N
         jMenuItem12.setText("Data Penerimaan");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem12);
 
         jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8_edit_graph_report_35px.png"))); // NOI18N
         jMenuItem9.setText("Bukti Penerimaan");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem9);
 
         jMenuBar1.add(jMenu3);
@@ -382,6 +407,46 @@ public class Dashboard extends javax.swing.JFrame {
         frm.setVisible(true);
         frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        LaporanDataSiswa frm = new LaporanDataSiswa();
+        jDesktopPane1.add(frm);
+        frm.setVisible(true);
+        frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        LaporanDataPembayaran frm = new LaporanDataPembayaran();
+        jDesktopPane1.add(frm);
+        frm.setVisible(true);
+        frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        LaporanDataPendaftaran frm = new LaporanDataPendaftaran();
+        jDesktopPane1.add(frm);
+        frm.setVisible(true);
+        frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        LaporanDataPenerimaan frm = new LaporanDataPenerimaan();
+        jDesktopPane1.add(frm);
+        frm.setVisible(true);
+        frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        BuktiPenerimaan frm = new BuktiPenerimaan();
+        jDesktopPane1.add(frm);
+        frm.setVisible(true);
+        frm.setLocation(jDesktopPane1.getWidth()/2-frm.getWidth()/2, jDesktopPane1.getHeight()/2-frm.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     /**
      * @param args the command line arguments
