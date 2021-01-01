@@ -135,7 +135,7 @@ public class LaporanDataPembayaran extends javax.swing.JInternalFrame {
         
         if("Bulan".equals(month) || "Tahun".equals(year))
         {
-            JOptionPane.showMessageDialog(null , "Isi Form dengan benar");
+            JOptionPane.showMessageDialog(null , "Pilih dengan Benar");
         }
         else
         {

@@ -350,7 +350,7 @@ public class BuktiPenerimaan extends javax.swing.JInternalFrame {
         String nodaftar = (String) jLabel7.getText();
         if("XX".equals(nodaftar))
         {
-            JOptionPane.showMessageDialog(null , "Isi Form dengan benar");
+            JOptionPane.showMessageDialog(null , "Pilih Data");
         }
         else
         {
