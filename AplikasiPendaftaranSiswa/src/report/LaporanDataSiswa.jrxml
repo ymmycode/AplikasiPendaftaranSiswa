@@ -271,7 +271,7 @@ tgl LIKE '%Desember 2020%']]>
 		<band height="18" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="119" splitType="Stretch">
+		<band height="140" splitType="Stretch">
 			<textField pattern="EEEEE dd MMMMM yyyy">
 				<reportElement uuid="914a09c5-eebd-4d39-8706-0a71aa464a95" style="Column header" x="631" y="0" width="166" height="20" forecolor="#000000"/>
 				<textElement verticalAlignment="Middle">
@@ -292,6 +292,13 @@ tgl LIKE '%Desember 2020%']]>
 					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ibu Badriah, S. Pd. I.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="631" y="112" width="89" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[(Kepala Sekolah)]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

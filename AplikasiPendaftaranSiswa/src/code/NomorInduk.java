@@ -545,8 +545,9 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
         {
             String nis = jTextField2.getText();
             String tgl = jLabel17.getText();
+            String nodaftar = jLabel5.getText();
             
-            sql1 = "update siswa set nis = '"+nis+"' , tgl = '"+tgl+"' ";
+            sql1 = "update siswa set nis = '"+nis+"' , tgl = '"+tgl+"' where nodaftar = '"+nodaftar+"'";
             
             stat = (com.mysql.jdbc.Statement) connection.prepareStatement(sql1);
             stat.execute(sql1);
@@ -577,8 +578,9 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
         else
         {
             String nis = jTextField2.getText();
+            String nodaftar = jLabel5.getText();
             
-            sql1 = "update siswa set nis = '"+nis+"' ";
+            sql1 = "update siswa set nis = '"+nis+"' where nodaftar = '"+nodaftar+"' ";
             
             stat = (com.mysql.jdbc.Statement) connection.prepareStatement(sql1);
             stat.execute(sql1);
@@ -641,7 +643,7 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
                 
                 
                 sql1 = "update siswa set "
-                        + "nis = null"
+                        + "nis = null "
                         + "where nodaftar = '"+nodaftar+"'";
                 
                 
@@ -650,6 +652,7 @@ public final class NomorInduk extends javax.swing.JInternalFrame {
                 
                 stat.close();
                 
+                Clear();
                 
                 JOptionPane.showMessageDialog(null , "Telah diperbarui");
             } catch (SQLException ex) {

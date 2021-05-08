@@ -9,6 +9,7 @@ import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
@@ -212,7 +213,7 @@ public class Login extends javax.swing.JFrame {
                 jPasswordField1.setText("");
                 jTextField1.requestFocus();
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }

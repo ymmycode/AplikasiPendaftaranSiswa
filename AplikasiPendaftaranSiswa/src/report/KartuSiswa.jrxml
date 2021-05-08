@@ -178,14 +178,14 @@ siswa]]>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="597" y="513" width="143" height="20"/>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="597" y="494" width="143" height="20"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ibu Badriah, S. Pd. I.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="58730f5e-34c5-44bb-866a-28fa21f137bc" x="44" y="156" width="733" height="377"/>
+				<reportElement uuid="58730f5e-34c5-44bb-866a-28fa21f137bc" x="44" y="157" width="733" height="377"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -214,6 +214,13 @@ siswa]]>
 				</box>
 				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1kS3y9rR0U-0X8mhWWzMYFJGyBYKTh9r-"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="611" y="514" width="89" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[(Kepala Sekolah)]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>

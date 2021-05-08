@@ -267,7 +267,7 @@ siswa.tgl LIKE '%Desember 2020%']]>
 		<band height="18" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="122" splitType="Stretch">
+		<band height="142" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="576" y="0" width="58" height="20"/>
 				<textElement verticalAlignment="Middle">
@@ -289,6 +289,13 @@ siswa.tgl LIKE '%Desember 2020%']]>
 				</textElement>
 				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="634" y="112" width="89" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[(Kepala Sekolah)]]></text>
+			</staticText>
 		</band>
 	</pageFooter>
 	<summary>

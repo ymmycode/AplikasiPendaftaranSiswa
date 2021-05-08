@@ -183,7 +183,7 @@ Demikian surat keterangan ini dubuat, untuk dipergunakan sebagaimana mestinya.]]
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="375" y="417" width="143" height="20"/>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="375" y="406" width="143" height="20"/>
 				<textElement>
 					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
@@ -202,6 +202,13 @@ Demikian surat keterangan ini dubuat, untuk dipergunakan sebagaimana mestinya.]]
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c4245620-cf6a-4053-b19c-78112b39499a" x="389" y="426" width="89" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[(Kepala Sekolah)]]></text>
 			</staticText>
 		</band>
 	</detail>
